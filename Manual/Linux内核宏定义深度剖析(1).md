@@ -64,12 +64,23 @@
 ### 第三次变形</br>
 　　再次修改代码如下：</br>
 　　`printf("The Result is %d",a+MAX(a++,b++));`</br>
-　　这个预期的输出结果是 10 ，运算之后 a=4 , b=6 。</br>
-　　`对上面预期结果有疑问的可以查阅。。。`</br>
+　　这个预期的输出结果是 9 ，运算之后 a=4 , b=6 。</br>
    实际运行结果如下：</br>
 ![七牛云](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-7.JPG)</br>
 ![GitHub](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-7.JPG)</br>
-　　带入宏定义展开之后是：`a+((a++)>(b++)?(a++):(b++))`
+　　带入宏定义展开之后是：`a+((a++)>(b++)?(a++):(b++))`</br>
+　　通过展开的式子可以很明显的看到计算之后 a=4 b=7 ,因为 a 和 b 都进行了两次自加运算。有可能会有人就是想要这种结果，但是这么隐晦、不受控的式子真的不建议去使用。</br>
+　　既然这样，那这个宏定义该怎么修改才能避免在调用MAX的时候参数自加两次呢？我可以在刚进入宏的时候就把参数的值取出来赋给另外的新变量，修改如下：</br>
+`#define MAX(a,b) ({\`</br>
+　　　　　　　　　　`int _x=(a);\`</br>
+　　　　　　　　　　`int _y=(b);\`</br>
+　　　　　　　　　　`_x>_y?_x:_y;})`</br>
+　　看下运行结果：</br>
+![七牛云](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-8.JPG)</br>
+![GitHub](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-8.JPG)</br>
+　　这个 9 的结果是 4+5=9 得来的，4是MAX运算之后的a的值；`MAX(a,b)`就是要返回两个参数里面最大的那个，对于我的式子来说就是要返回 a++ 和 b++ 里面的最大值，也就是 b++ 。所以结果是 4+5=9。</br>
+　　如果对`４`有疑问的话可以参考。。。。（补）</br>
+
 
 
 

@@ -6,8 +6,7 @@
      `const typeof( ((type *)0)->member ) *__mptr = (ptr); \`
      `(type *)( (char *)__mptr - offsetof(type,member) );})`
 
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-1.JPG)</br>
-![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-1.JPG)</br>
+
 
 
 　　

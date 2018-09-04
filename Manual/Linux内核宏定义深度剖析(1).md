@@ -22,7 +22,6 @@
 　　输入`：wq`保存退回终端窗口。</br>
 　　`gcc ex1.c -o ex1.out`在终端窗口输入编译`ex1.c`，并生成可执行文件的命令。
 　　`./ex1.out`输入命令执行我刚才编写的代码，执行结果如下图所示(相关文件请在本人GitHub中查看、下载)：
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-1.JPG)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-1.JPG)</br>
 　　从执行结果可以看出来我刚才编写的这个宏定义
 ### 第一次变形

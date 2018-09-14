@@ -30,7 +30,6 @@
 　　`printf("The Max Num is:%d\r\n",MAX(a!=3,b!=3));`</br>
 　　自己分析下预期的输出结果应该是：1</br>
 　　看下在Linux环境下的真是处理结果：</br>
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-2.JPG)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-2.JPG)</br>
 　　分析一下代码，上面的MAX展开之后应该是这样：</br>
 　　`MAX(a!=3>b!=3?a!=3:b!=3)`</br>

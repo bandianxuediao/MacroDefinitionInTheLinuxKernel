@@ -34,7 +34,6 @@
 　　分析一下代码，上面的MAX展开之后应该是这样：</br>
 　　`MAX(a!=3>b!=3?a!=3:b!=3)`</br>
 　　贴上来一张C/C++运算符优先级的表来供参考：
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-3.jpg)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-3.jpg)</br>
 　　运算符的优先级直接打乱了预期的执行过程，工作初期经常因为优先级的问题而写了很多的BUG。后面学聪明了，不管优先级怎么样，直接按照自己的预期流程添加小括号`()`。那么按照这个思路是修改调用代码还是宏定义？正常的编程思想是需要修改宏定义的，一劳永逸。那么我修改宏定义如下：</br>
 　　`#define MAX(a,b) (a)>(b)?(a):(b)`</br>

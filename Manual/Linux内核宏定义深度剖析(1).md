@@ -40,7 +40,6 @@
 　　再次`gcc ex1.c -o ex1.out`编译`ex1.c`文件。</br>
 　　`./ex1.out`运行刚编译完成的文件。</br>
 　　在Linux环境下的执行结果如下图所示：</br>
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-4.jpg)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-4.jpg)</br>
 　　从运行结果可以清楚地看到我得到了预期想要的结果，第一次变形成功。</br>
 ### 第二次变形</br>

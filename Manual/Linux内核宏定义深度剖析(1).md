@@ -46,7 +46,6 @@
 　　再次根据王老师的教程修改代码：</br>
 　　`printf("The Result is %d",a+MAX(a,b));`</br>
 　　预期结果是输出 8 ，那看下Linux环境下真正的输出结果：</br>
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-5.jpg)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-5.jpg)</br>
 　　为什么会有这个结果，其实分析一下代码就真相大白了：</br>
 　　`a+a>b?a:b`->`3+3>5?3:5`</br>

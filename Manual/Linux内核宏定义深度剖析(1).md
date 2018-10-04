@@ -53,7 +53,6 @@
 　　于是我修改宏定义如下：</br>
 　　`#define MAX(a,b) ((a)>(b)?(a):(b))`</br>
 　　再次运行瞅一眼运行结果：</br>
-![七牛云备用链接](http://pcnwqhy39.bkt.clouddn.com/LinuxKernel-1-6.jpg)</br>
 ![GitHub备用链接](https://github.com/bandianxuediao/MacroDefinitionInTheLinuxKernel/blob/master/Photo/LinuxKernel-1-6.jpg)</br>
 　　确认没问题，结果是 8 。</br>
 ### 第三次变形</br>
